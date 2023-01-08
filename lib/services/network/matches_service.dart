@@ -13,7 +13,7 @@ class MatchesService {
   static const _xApiSportsKeyHeader = 'x-apisports-key';
   final String baseURL;
 
-  MatchesService({required this.baseURL});
+  const MatchesService({required this.baseURL});
   Future<List<MatchDTO>> matches(String date) async {
     final response = await http.get(
       Uri.https(baseURL, _fixturesEndpoint, {'date': date}),
