@@ -34,6 +34,8 @@ class App extends StatelessWidget {
                   matchMapper: context.read<MatchMapper>()),
             )
           ],
+          //*avessi bloc globali inietterei qui (ma causa rebuild)
+          //*per ora l0'unico bloc è usato nella main page lo inietto lì
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Partite',
