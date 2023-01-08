@@ -7,9 +7,9 @@ import 'package:matches/models/match.dart';
 
 class MatchesRepository {
   final MatchesService matchesService;
-  final MatchMapper macthMapper;
+  final MatchMapper matchMapper;
 
-  MatchesRepository({required this.matchesService, required this.macthMapper});
+  MatchesRepository({required this.matchesService, required this.matchMapper});
 
   Future<List<Match>> matches(DateTime date) async {
     //*da dateTime a string con intl
@@ -17,7 +17,7 @@ class MatchesRepository {
       final response =
           await matchesService.matches(DateFormat('yyyy-MM-dd').format(date));
       //* se qualcosa va storto catturo in networkError
-      return response.map(macthMapper.toModel).toList(growable: false);
+      return response.map(matchMapper.toModel).toList(growable: false);
     } on NetworkError catch (e) {
       throw RepositoryError(e.reasonPhrase!); //*arrivava dal service
     } catch (e) {
