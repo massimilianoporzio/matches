@@ -29,6 +29,20 @@ class _MainPageState extends State<MainPage>
     return Scaffold(
       appBar: AppBar(
         title: const AppBarTitle(),
+        bottom: TabBar(
+          controller: _tabController,
+          isScrollable: true,
+          indicatorSize:
+              TabBarIndicatorSize.label, //* grandezza tab dip da label
+          tabs: const [
+            Tab(
+              text: 'Calendario',
+            ),
+            Tab(
+              text: 'Oggi',
+            )
+          ],
+        ),
       ),
     );
   }
